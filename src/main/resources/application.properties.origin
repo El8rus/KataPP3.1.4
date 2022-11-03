@@ -1,0 +1,17 @@
+# MySQL properties
+spring.datasource.driver-class-name=
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+# Hibernate properties
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop
+
+spring.mvc.hiddenmethod.filter.enabled=true
+
+server.servlet.encoding.force=true
+server.servlet.encoding.charset=utf-8
+server.servlet.encoding.enabled=true
+server.tomcat.uri-encoding=UTF-8

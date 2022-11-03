@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+<body style="min-height: 100vh">
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <div class="container-fluid me-auto">
+                <span class="navbar-brand" id="current_authorised_user-data">
+                </span>
+    </div>
+    <span class="nav-item ms-auto">
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-dark">Logout</button>
+    </form>
+      </span>
+</nav>
+
+<div class="d-flex row g-0 vh-100">
+    <div class="col-2 bg-white text-start">
+        <div class="nav flex-column nav-pills nav-fill" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active container-fluid text-start" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
+               role="tab"
+               aria-controls="v-pills-profile" aria-selected="true">User</a>
+        </div>
+    </div>
+    <div class="col-10 bg-light">
+        <div class="tab-content container-fluid" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="container px-4 mt-4">
+                        <h1>User information-page</h1>
+                        <div class="bg-white border">
+                            <div>
+                                <div class="container bg-light">
+                                    <h3 class="pt-3 pb-3" style="color:black">About user</h3>
+                                </div>
+                            </div>
+                            <div class="px-3 ">
+                                <table class="table table-striped mt-4 border-top">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Roles</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="userInfo">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../static/user.js" th:src="@{/user.js}"></script>
+</body>
+</html>
